@@ -20,7 +20,7 @@ public class TrianguloRetangulo {
         
         float base; 
         float altura; 
-        float area; 
+        float hipotenusa; 
         String texto1;
         
         System.out.println("Digite a base:");
@@ -29,11 +29,11 @@ public class TrianguloRetangulo {
         System.out.println("agora digite a altura:");
         altura = dados.nextInt();
         
-        area = (base*altura)/2;
+        hipotenusa = (base*altura)/2;
         
-        texto1 = "A área de seu triângulo retângulo é: ";
+        texto1 = "A hipotenusa de seu triângulo retângulo é: ";
         
-        System.out.println(texto1 + area);
+        System.out.println(texto1 + hipotenusa);
         
         
     }
