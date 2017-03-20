@@ -1,0 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package triangulo.pkgdo.retanguloII;
+import java.util.Scanner;
+/**
+ *
+ * @author Caio-Stalberg
+ */
+public class TrianguloRetanguloII {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner dados = new Scanner(System.in);
+        
+        float base; 
+        float altura; 
+        float hipotenusa;
+        float perimetro;
+        String texto1;
+        
+        System.out.println("Digite a base:");
+        base = dados.nextInt();
+        
+        System.out.println("agora digite a altura:");
+        altura = dados.nextInt();
+        
+        hipotenusa = (base*altura)/2;
+        perimetro = hipotenusa + base + altura;  
+        
+        texto1 = "O perímetro de seu triângulo retângulo é: ";
+        
+        System.out.println(texto1 + perimetro);
+        
+        
+    }
+    
+}
