@@ -18,9 +18,10 @@ public class TrianguloRetangulo {
         
         Scanner dados = new Scanner(System.in);
         
-        float base; 
-        float altura; 
-        float hipotenusa; 
+        double base; 
+        double altura; 
+        double hipotenusa;
+ 
         String texto1;
         
         System.out.println("Digite a base:");
@@ -29,12 +30,11 @@ public class TrianguloRetangulo {
         System.out.println("agora digite a altura:");
         altura = dados.nextInt();
         
-        hipotenusa = (base*altura)/2;
+        hipotenusa = (base + altura)/2;  
         
         texto1 = "A hipotenusa de seu triângulo retângulo é: ";
         
-        System.out.println(texto1 + hipotenusa);
-        
+        System.out.println(texto1 + hipotenusa); 
         
     }
     
