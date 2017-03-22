@@ -30,7 +30,7 @@ public class TrianguloRetanguloII {
         System.out.println("agora digite a altura:");
         altura = dados.nextInt();
         
-        hipotenusa = (base*altura)/2;
+        hipotenusa = (base + altura)/2;
         perimetro = hipotenusa + base + altura;  
         
         texto1 = "O perímetro de seu triângulo retângulo é: ";
