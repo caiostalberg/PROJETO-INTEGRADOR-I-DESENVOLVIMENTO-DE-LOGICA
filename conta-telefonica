@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package estruturas.pkgdo.sequenciais;
+
+import java.util.Scanner;
+/**
+ *
+ * @author Caio-Stalberg
+ */
+public class ContaTelefonica {
+    public static void main(String[] args) {
+    Scanner console = new Scanner(System.in);
+    
+    
+    double assinatura = 32.32;    
+    double ligacoesLocais;
+    double ligacoesInterurbanas;
+    double ligacoesInternacionais;
+    double totalFatura; 
+    
+    //Entrada
+    System.out.println("Informe os minutos gastos em ligações locais: ");
+    ligacoesLocais = console.nextDouble();
+    
+    System.out.println("Informe os minutos gastos em ligações Interurbanas: ");
+    ligacoesInternacionais = console.nextDouble();
+   
+    System.out.println("Informe os minutos gastos em ligações Internacionais: ");
+    ligacoesInterurbanas = console.nextDouble();
+    
+    //processamento
+    ligacoesLocais = ligacoesLocais * 0.09; 
+    ligacoesInternacionais = ligacoesInternacionais * 0.26;
+    ligacoesInterurbanas = ligacoesInterurbanas * 0.86;
+    
+    totalFatura = assinatura + ligacoesLocais + ligacoesInterurbanas + ligacoesInternacionais;
+    
+    //Saida
+    
+        System.out.println("VALORES A SEREM PAGOS");
+        
+        System.out.println("Assinatura: R$ " + assinatura);   
+        System.out.println("Ligações locais: R$ " + ligacoesLocais);   
+        System.out.println("Ligações interurbanas: R$ " + ligacoesInterurbanas);   
+        System.out.println("Ligações internacionais: R$ " + ligacoesInternacionais);   
+ 
+        System.out.print("Total da fatura: R$ ");
+        System.out.printf( "%.2f", totalFatura);   
+        
+    }
+    
+}
