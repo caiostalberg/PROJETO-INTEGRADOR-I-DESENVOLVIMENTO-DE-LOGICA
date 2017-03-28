@@ -1,0 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package estruturasdecisao;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Caio-Stalberg
+ */
+public class ValidacaoI {
+
+    public static void main (String args[]){
+
+    Scanner console = new Scanner(System.in);
+    
+    int numero;
+    
+    //Entrada
+    numero = Integer.parseInt(JOptionPane.showInputDialog(null,"n:"));
+    
+    //Processamento
+    if (numero >=1 && numero <=12){
+    numero = numero * 2;
+    JOptionPane.showInputDialog(null, "O dobro do número informado é: " + numero);
+    }else {
+    JOptionPane.showConfirmDialog(null, "Numero inválido: " + numero);
+    
+    }
+    
+    //Saida
+    
+    
+
+    }
+}
