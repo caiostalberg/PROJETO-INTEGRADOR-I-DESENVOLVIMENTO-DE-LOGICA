@@ -1,0 +1,127 @@
+/*
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+ */
+package estruturas.pkgdo.sequenciais;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Caio-Stalberg
+ */
+public class Conecta4 {
+
+    /**
+     * * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here     
+        Scanner ler = new Scanner(System.in);
+        int[][] tabuleiro = new int[3][3];
+        int jogadorx, jogadoro;
+        jogadorx = -1;
+        jogadoro = 1;
+        int jogadas = 0;
+        int linhaJogada = 0;
+        int colunaJogada = 0;
+        
+        
+        while (jogadas < 9) {
+            //------------solicita a jogada em linha e coluna--------------------  
+            try {
+                System.out.println("digite sua a linha da sua jogada");
+                linhaJogada = converte(ler.nextInt());
+                System.out.println("digite sua a coluna da sua jogada");
+                colunaJogada = converte(ler.nextInt());
+                if (tabuleiro[linhaJogada][colunaJogada] == -1 || tabuleiro[linhaJogada][colunaJogada] == 1) {
+                    System.out.println("Esta posição já está preenchida");
+                } else {
+                    //-------------------Contnua se a posição não estiver ocupada---------               
+                    if (jogadas % 2 == 0) {
+                        // se a jogada for impar preenche com X, senao com O       
+                        tabuleiro[linhaJogada][colunaJogada] = jogadorx;
+                    } else {
+                        tabuleiro[linhaJogada][colunaJogada] = jogadoro;
+                    }
+                    System.out.println();
+                    //----------Impressão do campo--------------------------       
+                    for (int linha = 0; linha < 3; linha++) {
+                        for (int coluna = 0; coluna < 3; coluna++) {
+                            if (tabuleiro[linha][coluna] == -1) {
+                                System.out.print(" X ");
+                            }
+                        
+                        if (tabuleiro[linha][coluna] == 1) {
+                            System.out.print(" O ");
+                        }
+                        if (tabuleiro[linha][coluna] == 0) {
+                            System.out.print("   ");
+                        }
+                        if (coluna == 0 || coluna == 1) {
+                            System.out.print("|");
+                        }
+                    }
+                    System.out.println();
+                }
+        //-------------------Faz verificações----------------      
+                int ganhador = verificaResultado(tabuleiro);
+                if (ganhador == 1) {
+                    System.out.println("o/ Jogador O é o vencedor o/ ");
+                    jogadas = 9;
+                } else {
+                    if (ganhador == -1) {
+                        System.out.println("o/ Jogador X é o vencedor o/");
+                        jogadas = 9;
+                    } else {
+                        jogadas++;
+                    }
+                }
+            }
+            }
+        
+        catch (Exception e) {           
+        System.out.println("valor inválido");
+}
+
+    }
+    }
+
+    public static int converte(int a) {// deixar o programa mais amigavel, o usuario digita valores de 1 a 3 e não de 0 a 2      
+        return a - 1;
+    }
+
+    public static int verificaResultado(int[][] tabuleiro) {
+        for (int linha = 0; linha < 3; linha++) {
+            if ((tabuleiro[linha][0] + tabuleiro[linha][1] + tabuleiro[linha][2]) == -3) {
+                return -1;
+            }
+            if ((tabuleiro[linha][0] + tabuleiro[linha][1] + tabuleiro[linha][2]) == 3) {
+                return 1;
+            }
+        }
+        for (int coluna = 0; coluna < 3; coluna++) {
+
+            if ((tabuleiro[0][coluna] + tabuleiro[1][coluna] + tabuleiro[2][coluna]) == -3) {
+                return -1;
+            }
+            if ((tabuleiro[0][coluna] + tabuleiro[1][coluna] + tabuleiro[2][coluna]) == 3) {
+                return 1;
+            }
+        }
+        if ((tabuleiro[0][0] + tabuleiro[1][1] + tabuleiro[2][2]) == -3) {
+            return -1;
+        }
+        if ((tabuleiro[0][0] + tabuleiro[1][1] + tabuleiro[2][2]) == 3) {
+            return 1;
+        }
+        if ((tabuleiro[0][2] + tabuleiro[1][1] + tabuleiro[2][0]) == -3) {
+            return -1;
+        }
+        if ((tabuleiro[0][2] + tabuleiro[1][1] + tabuleiro[2][0]) == 3) {
+            return 1;
+        }
+        return 0;
+    }
+}
